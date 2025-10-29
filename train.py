@@ -30,7 +30,7 @@ model_path = os.path.join(model_dir, "model_2.pickle")
 with open(model_path, "wb") as f:
     pickle.dump(model, f)
 
-#save roast category mapping dictionary
+#save the roast category mapping dictionary
 map_path = os.path.join(model_dir, "roast_map.pickle")
 with open(map_path, "wb") as f:
     pickle.dump(roast_map, f)
