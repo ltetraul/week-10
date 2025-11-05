@@ -36,6 +36,6 @@ with open("model_2.pickle", "wb") as f:
 with open("roast_map.pickle", "wb") as f:
     pickle.dump(roast_map, f)
 
-print("✅ model_1 (Linear Regression) saved.")
-print("✅ model_2 (Decision Tree Regressor) saved.")
-print("✅ roast_map saved.")
+print("model_1 (Linear Regression) saved.")
+print("model_2 (Decision Tree Regressor) saved.")
+print("roast_map saved.")
