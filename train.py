@@ -1,6 +1,7 @@
 import pandas as pd
 import pickle
 from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
 
 #load dataset
 url = "https://raw.githubusercontent.com/leontoddjohnson/datasets/refs/heads/main/data/coffee_analysis.csv"
@@ -22,8 +23,9 @@ model_1.fit(X1, y1)
 X2 = data[['100g_USD', 'roast_num']].dropna()
 y2 = data.loc[X2.index, 'rating']
 
-model_2 = LinearRegression()
+model_2 = DecisionTreeRegressor(random_state=42)
 model_2.fit(X2, y2)
+
 #save both models and roast map
 with open("model_1.pickle", "wb") as f:
     pickle.dump(model_1, f)
@@ -34,5 +36,6 @@ with open("model_2.pickle", "wb") as f:
 with open("roast_map.pickle", "wb") as f:
     pickle.dump(roast_map, f)
 
-print("Linear regression models and roast_map saved successfully.")
-
+print("✅ model_1 (Linear Regression) saved.")
+print("✅ model_2 (Decision Tree Regressor) saved.")
+print("✅ roast_map saved.")
